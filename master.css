@@ -1,0 +1,316 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+  background-color: #111111;
+  height: 2000px;
+  
+  
+}
+
+/* اول ماتفتح الصفحة العناصر تظهر من اليمين*/
+@keyframes body{
+  0% {transform: translate(50vw,0);}
+
+
+  100% {transform: translate(0,0);}
+
+}
+#Home,#Products,#Guide{
+  animation: body 2s 1;
+}
+@keyframes body{
+  0% {transform: translate(50vw,0);}
+
+
+  100% {transform: translate(0,0);}
+
+}
+#master{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  
+  
+}
+
+
+
+#website{
+  color: #ffffff;
+  padding: 10px;
+  font-size: 40px;
+  position: sticky;
+  padding-left: 20px;
+
+}
+nav{
+  margin-top: 20px;
+  
+  font-size: 25px;
+  margin-right: 10px;
+  
+}
+nav button{
+  background-color: #FFD700 ;
+  color: black;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  animation: borderrmove 3s infinite ;
+  cursor: pointer;
+  font-weight: bold;
+}
+@keyframes borderrmove{
+  0%{
+    border-radius: 5px;
+  }
+  50%{
+    border-radius: 20px;
+
+  }
+  100%{
+    border-radius: 5px;
+  }
+}
+
+#child{
+  color: #ffffff;
+  padding: 10px;
+  text-decoration: none;
+}
+#child:hover{
+  cursor: pointer;
+  color: #6d6a6a;
+}
+
+#imgHome{
+  width: 1250px;
+  
+  flex-wrap: wrap;
+  border-radius: 50px;
+
+  
+}
+
+#hmg-home{
+  margin-top: 100px;
+  
+  display: flex;
+  justify-content: center;
+  
+}
+#myButton{
+  border: none;
+  background-color: #FFD700;
+  padding: 17px;
+  border-radius: 15px;
+  position: relative;
+  left: px;
+  top: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#myButton:hover{
+  background-color: #e4c206;
+}
+p{
+  color: #dad7d7;
+}
+#about{
+  color: #ffffff;
+  margin-top: 100px;
+  padding-left: 200px;
+  line-height:1.8;
+  
+}
+#Products-tittle{
+  text-align: center;
+  color: #6F4E37;
+  margin-top: 100px;
+  font-size: 40px;
+  font-weight: bold;
+  
+}
+#Products{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+
+h3{
+  color: #ffffff;
+  
+}
+img{
+  width: 300px;
+  border-radius: 10px 10px 0 0;
+  
+}
+#card{
+  background-color: #ffffff;
+  margin: 10px auto;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  
+}
+#card:hover{
+  transform: scale(1.1);
+}
+#Products h3{
+  color: black;
+  text-align: center;
+  
+}
+#card p{
+  color: black;
+  text-align: center;
+}
+#cardButton{
+  background-color: #FFD700;
+  margin-top: 10px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+  
+  
+}
+#cardButton:hover{
+  background-color: #e0c00c;
+}
+
+
+#add{
+  background-color: transparent ;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#cardButton-one{
+  background-color: #FFD700;
+  margin-top: 13px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+}
+#cardButton-one:hover{
+  background-color:#e0c00c ;
+}
+#add-one{
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+#Features{
+  margin-top: 200px;
+  line-height: 1.8;
+  color: #ffffff;
+  padding-left: 350px;
+  background-color: black;
+  padding-top:10px ;
+  padding-bottom: 10px; 
+  flex-wrap: wrap;
+
+}
+a{
+  text-decoration: none;
+}
+
+.aboutService{
+  color: #ffffff;
+  margin-top: 200px;
+  padding-left: 200px;
+  line-height:1.8;
+  display: flex;
+  
+}
+#noteService{
+  margin-top: 50px;
+}
+.aboutService img{
+  border-radius: 10px;
+  height: 400px;
+  margin-left: 130px;
+}
+.aboutService h3{
+  margin-top: 10px;
+  font-weight: bold;
+  color: #dad7d7;
+}
+.aboutService p{
+  color: #dad7d7;
+}
+
+
+
+/*عنوان JavaScript*/
+#jsTitle{
+  text-align: center;
+  color: #6F4E37;
+  margin-top: 100px;
+  font-size: 40px;
+  font-weight: bold;
+}
+#countainter h1{
+  color: #ffffff;
+  font-size: 25px;
+}
+#q1 ,#q2,#q3,#q4{
+  padding: 10px auto;
+  margin: 10px auto;
+  width: 60%;
+  
+  
+}
+#plus{
+  font-size: 30px;
+  color: #ffffff;
+  cursor: pointer;
+  padding-right: 10px
+  
+}
+
+.title-accordion{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6F4E37;
+  padding: 15px;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  border-bottom-left-radius: none ;
+  border-bottom-right-radius: none ;
+
+  
+}
+.content{
+  height: 0;
+  opacity: 0;
+  color: black;
+  padding: 18px;
+  font-weight: bold;
+  background-color: #D9C3B0;
+  border-bottom-left-radius: 5px ;
+  border-bottom-right-radius: 5px ;
+  border-bottom: 4px solid #3E2A1F;
+  transition: all 0.5s;
+  
+}
+.active{
+  height: 100px;
+  opacity: 1;
+}
