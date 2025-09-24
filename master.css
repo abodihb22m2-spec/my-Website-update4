@@ -1,316 +1,401 @@
-*{
+/* -------------------- Reset & Base -------------------- */
+* {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-body{
+
+body {
   background-color: #111111;
-  height: 2000px;
-  
-  
+  min-height: 2000px;
 }
 
-/* اول ماتفتح الصفحة العناصر تظهر من اليمين*/
-@keyframes body{
-  0% {transform: translate(50vw,0);}
-
-
-  100% {transform: translate(0,0);}
-
+/* -------------------- Animations -------------------- */
+@keyframes slideIn {
+  0% { transform: translateX(50vw); }
+  100% { transform: translateX(0); }
 }
-#Home,#Products,#Guide{
-  animation: body 2s 1;
+
+#Home, #Products, #Guide {
+  animation: slideIn 2s 1;
 }
-@keyframes body{
-  0% {transform: translate(50vw,0);}
 
-
-  100% {transform: translate(0,0);}
-
+@keyframes borderrmove {
+  0% { border-radius: 5px; }
+  50% { border-radius: 20px; }
+  100% { border-radius: 5px; }
 }
-#master{
+
+/* -------------------- Layout -------------------- */
+#master {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  margin-top: 10px;
   flex-wrap: wrap;
-  
-  
+  margin-top: 10px;
 }
 
-
-
-#website{
+#website {
   color: #ffffff;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 40px;
   position: sticky;
-  padding-left: 20px;
-
+  top: 0;
 }
-nav{
+
+nav {
   margin-top: 20px;
-  
   font-size: 25px;
   margin-right: 10px;
-  
 }
-nav button{
-  background-color: #FFD700 ;
+
+nav button {
+  background-color: #FFD700;
   color: black;
   border: none;
   padding: 10px;
   font-size: 20px;
-  text-align: center;
-  animation: borderrmove 3s infinite ;
-  cursor: pointer;
   font-weight: bold;
-}
-@keyframes borderrmove{
-  0%{
-    border-radius: 5px;
-  }
-  50%{
-    border-radius: 20px;
-
-  }
-  100%{
-    border-radius: 5px;
-  }
+  cursor: pointer;
+  animation: borderrmove 3s infinite;
 }
 
-#child{
+#child {
   color: #ffffff;
   padding: 10px;
   text-decoration: none;
 }
-#child:hover{
+
+#child:hover {
   cursor: pointer;
   color: #6d6a6a;
 }
 
-#imgHome{
-  width: 1250px;
-  
-  flex-wrap: wrap;
+/* -------------------- Home Image -------------------- */
+#imgHome {
+  width: 100%;
+  max-width: 1250px;
   border-radius: 50px;
-
-  
 }
 
-#hmg-home{
+#hmg-home {
   margin-top: 100px;
-  
   display: flex;
   justify-content: center;
-  
 }
-#myButton{
+
+/* -------------------- Buttons -------------------- */
+#myButton {
   border: none;
   background-color: #FFD700;
   padding: 17px;
   border-radius: 15px;
   position: relative;
-  left: px;
   top: 25px;
   font-weight: bold;
   cursor: pointer;
 }
-#myButton:hover{
+
+#myButton:hover {
   background-color: #e4c206;
 }
-p{
+
+p {
   color: #dad7d7;
 }
-#about{
+
+/* -------------------- About -------------------- */
+#about {
   color: #ffffff;
   margin-top: 100px;
-  padding-left: 200px;
-  line-height:1.8;
-  
+  padding: 0 20px 0 200px;
+  line-height: 1.8;
 }
-#Products-tittle{
+
+/* -------------------- Products Section -------------------- */
+#Products-tittle {
   text-align: center;
   color: #6F4E37;
   margin-top: 100px;
   font-size: 40px;
   font-weight: bold;
-  
 }
-#Products{
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
+
+#Products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  flex-wrap: wrap;
+  margin: 50px auto;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
-
-h3{
-  color: #ffffff;
-  
-}
-img{
-  width: 300px;
-  border-radius: 10px 10px 0 0;
-  
-}
-#card{
+#card {
   background-color: #ffffff;
-  margin: 10px auto;
   border-radius: 15px;
-  transition: 0.3s ease;
-  
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 550px; /* زيادة ارتفاع البطاقة ليناسب الصورة الطويلة */
 }
-#card:hover{
-  transform: scale(1.1);
+
+#card:hover {
+  transform: scale(1.05);
 }
-#Products h3{
+
+#card img {
+  width: 100%;
+  height: 400px; /* جعل الصورة أطول */
+  object-fit: cover;
+}
+
+#card h3 {
   color: black;
   text-align: center;
   
+  font-size: 22px;
 }
-#card p{
+
+#card p {
   color: black;
   text-align: center;
+  font-size: 16px;
+  
 }
-#cardButton{
+
+#cardButton, #cardButton-one {
   background-color: #FFD700;
-  margin-top: 10px;
+  padding: 12px;
   text-align: center;
-  padding: 10px;
   border-radius: 0 0 10px 10px;
   cursor: pointer;
-  
-  
+  font-weight: bold;
 }
-#cardButton:hover{
+
+#cardButton:hover, #cardButton-one:hover {
   background-color: #e0c00c;
 }
 
-
-#add{
-  background-color: transparent ;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#cardButton-one{
-  background-color: #FFD700;
-  margin-top: 13px;
-  text-align: center;
-  padding: 10px;
-  border-radius: 0 0 10px 10px;
-  cursor: pointer;
-}
-#cardButton-one:hover{
-  background-color:#e0c00c ;
-}
-#add-one{
+#add, #add-one {
   background-color: transparent;
   border: none;
   font-weight: bold;
   cursor: pointer;
-  
 }
-#Features{
+
+/* -------------------- Features & About Service -------------------- */
+#Features {
   margin-top: 200px;
   line-height: 1.8;
   color: #ffffff;
-  padding-left: 350px;
+  padding: 10px 20px 10px 350px;
   background-color: black;
-  padding-top:10px ;
-  padding-bottom: 10px; 
   flex-wrap: wrap;
-
-}
-a{
-  text-decoration: none;
 }
 
-.aboutService{
+.aboutService {
   color: #ffffff;
   margin-top: 200px;
-  padding-left: 200px;
-  line-height:1.8;
+  padding: 0 20px 0 200px;
+  line-height: 1.8;
   display: flex;
-  
 }
-#noteService{
-  margin-top: 50px;
-}
-.aboutService img{
+
+.aboutService img {
   border-radius: 10px;
   height: 400px;
   margin-left: 130px;
 }
-.aboutService h3{
+
+.aboutService h3 {
   margin-top: 10px;
   font-weight: bold;
   color: #dad7d7;
 }
-.aboutService p{
+
+.aboutService p {
   color: #dad7d7;
 }
 
-
-
-/*عنوان JavaScript*/
-#jsTitle{
+/* -------------------- JavaScript Section -------------------- */
+#jsTitle {
   text-align: center;
   color: #6F4E37;
   margin-top: 100px;
   font-size: 40px;
   font-weight: bold;
 }
-#countainter h1{
+
+#countainter h1 {
   color: #ffffff;
   font-size: 25px;
 }
-#q1 ,#q2,#q3,#q4{
+
+#q1, #q2, #q3, #q4 {
   padding: 10px auto;
   margin: 10px auto;
   width: 60%;
-  
-  
 }
-#plus{
+
+#plus {
   font-size: 30px;
   color: #ffffff;
   cursor: pointer;
-  padding-right: 10px
-  
+  padding-right: 10px;
 }
 
-.title-accordion{
+.title-accordion {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #6F4E37;
   padding: 15px;
-  border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
-  border-bottom-left-radius: none ;
-  border-bottom-right-radius: none ;
-
-  
+  border-radius: 17px 17px 0 0;
 }
-.content{
+
+.content {
   height: 0;
   opacity: 0;
   color: black;
   padding: 18px;
   font-weight: bold;
   background-color: #D9C3B0;
-  border-bottom-left-radius: 5px ;
-  border-bottom-right-radius: 5px ;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-bottom: 4px solid #3E2A1F;
   transition: all 0.5s;
-  
 }
-.active{
+
+.active {
   height: 100px;
   opacity: 1;
+}
+
+/* -------------------- Responsive Media Queries -------------------- */
+@media (max-width: 1024px) {
+  #Features, .aboutService, #about {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .aboutService {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutService img {
+    margin-left: 0;
+    margin-top: 20px;
+    width: 90%;
+    height: auto;
+  }
+
+  #imgHome {
+    width: 90%;
+  }
+
+  #card {
+    height: 420px;
+  }
+
+  #card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  #website {
+    font-size: 32px;
+    padding-left: 10px;
+  }
+
+  nav {
+    font-size: 18px;
+  }
+
+  nav button {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  #Products {
+    gap: 20px;
+  }
+
+  #card {
+    height: 400px;
+  }
+
+  #card img {
+    height: 200px;
+  }
+
+  #about {
+    padding-left: 20px;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  #website {
+    font-size: 28px;
+    padding-left: 10px;
+  }
+
+  #Products-tittle, #jsTitle {
+    font-size: 32px;
+  }
+
+  #myButton {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  #q1, #q2, #q3, #q4 {
+    width: 95%;
+  }
+
+  #Features, .aboutService, #about {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #imgHome {
+    width: 100%;
+  }
+
+  .aboutService img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  #master {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #card {
+    height: 380px;
+  }
+
+  #card img {
+    height: 180px;
+  }
+
+  #card h3 {
+    font-size: 18px;
+  }
+
+  #card p {
+    font-size: 14px;
+  }
+
+  #cardButton, #cardButton-one {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
